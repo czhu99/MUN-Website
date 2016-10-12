@@ -23,18 +23,40 @@
 	<link rel="shortcut icon" type="image/x-icon" href="./img/icon.png"/>
 	
 	<script>
+	
+		var inputName;
+		var inputEmail ;
+		var inputPhone;
+		var inputMessage;
+		var allIn;
+		
 		function allInput()
 		{
-			var filled = true;
-			var inputName = document.getElementById('name').value;
-			var inputEmail = document.getElementById('email').value;
-			var inputPhone = document.getElementById('phone').value;
-			var inputMessage = document.getElementById('message').value;
+			allIn = true;
+			inputName = document.getElementById('name').value;
+			inputEmail = document.getElementById('email').value;
+			inputPhone = document.getElementById('phone').value;
+			inputMessage = document.getElementById('message').value;
 
 			if(inputName == '' || inputEmail == '' || inputPhone == '' || inputMessage == '')
 			{
-				alert("Please input all fields");
+				allIn = false;
+				alert("Please input all required fields");
 			}
+		}
+		
+		function displayInfo()
+		{
+			if(allIn == true)
+			{
+				document.getElementById('resultMessage').innerHTML = "Hello, " + inputName + ", thank you for your message. We will contact you at " + inputEmail + " or " + inputPhone + " shortly."
+			}
+		}
+		
+		function sendForm()
+		{
+			allInput();
+			displayInfo();
 		}
 	</script>
 </head>
@@ -127,9 +149,10 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type = "button" onclick = "allInput()" class="btn btn-primary">Send</button>
+                            <button type = "button" onclick = "sendForm()" class="btn btn-primary">Send</button>
                         </div>
                     </div>
+					<p id = "resultMessage"></p>
                 </form>
             </div>
         </div>
