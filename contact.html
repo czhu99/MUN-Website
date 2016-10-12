@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -21,6 +21,22 @@
     <link href="./Clean Blog - Contact_files/css(1)" rel="stylesheet" type="text/css">
 
 	<link rel="shortcut icon" type="image/x-icon" href="./img/icon.png"/>
+	
+	<script>
+		function allInput()
+		{
+			var filled = true;
+			var inputName = document.getElementById('name').value;
+			var inputEmail = document.getElementById('email').value;
+			var inputPhone = document.getElementById('phone').value;
+			var inputMessage = document.getElementById('message').value;
+
+			if(inputName == '' || inputEmail == '' || inputPhone == '' || inputMessage == '')
+			{
+				alert("Please input all fields");
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -57,8 +73,8 @@
     </nav>
 
     <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url(&#39;img/muncase.jpg&#39;)">
+
+    <header class="intro-header" style="background-image: url(&#39;img/muncase.jpg&#39;)"> <!-- Image taken by me -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -77,35 +93,33 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>For any official inquiries for the Fremd MUN team, please fill out the form below or email us at fremdmun@gmail.com, and we will get back to you as soon as possible.</p>
-                <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-                <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-                <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+				
                 <form name="sentMessage" id="contactForm" novalidate="">
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required="" data-validation-required-message="Please enter your name.">
+                            <input class="form-control" placeholder="Name" id="name">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required="" data-validation-required-message="Please enter your email address.">
+                            <input class="form-control" placeholder="Email Address" id="email">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required="" data-validation-required-message="Please enter your phone number.">
+                            <input class="form-control" placeholder="Phone Number" id="phone">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Message</label>
-                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
+                            <textarea rows="5" class="form-control" placeholder="Message" id="message"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -113,7 +127,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type = "submit" class="btn btn-default">Send</button>
+                            <button type = "button" onclick = "allInput()" class="btn btn-primary">Send</button>
                         </div>
                     </div>
                 </form>
@@ -168,10 +182,6 @@
 
     <!-- Theme JavaScript -->
     <script src="./Clean Blog - Contact_files/clean-blog.min.js.download"></script>
-
-	<!-- Contact Form JavaScript -->
-    <script src="./Clean Blog - About_files/jqBootstrapValidation.js.download"></script>
-    <script src="./Clean Blog - About_files/contact_me.js.download"></script>
 
 
 </body></html>
